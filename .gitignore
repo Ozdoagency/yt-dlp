@@ -6,11 +6,9 @@ cookies
 
 # Downloaded
 *.annotations.xml
-*.aria2
 *.description
 *.dump
 *.frag
-*.frag.aria2
 *.frag.urls
 *.info.json
 *.live_chat.json
