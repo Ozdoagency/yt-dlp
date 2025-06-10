@@ -175,7 +175,6 @@ This provides convenient predefined aliases for common use cases. Available pres
 - **zdf**: [Fix extractors](https://github.com/yt-dlp/yt-dlp/commit/7be14109a6bd493a2e881da4f9e30adaf3e7e5d5) ([#12779](https://github.com/yt-dlp/yt-dlp/issues/12779)) by [bashonly](https://github.com/bashonly), [InvalidUsernameException](https://github.com/InvalidUsernameException)
 
 #### Downloader changes
-- **niconicodmc**: [Remove downloader](https://github.com/yt-dlp/yt-dlp/commit/8d127b18f81131453eaba05d3bb810d9b73adb75) ([#12916](https://github.com/yt-dlp/yt-dlp/issues/12916)) by [doe1080](https://github.com/doe1080)
 
 #### Networking changes
 - [Add PATCH request shortcut](https://github.com/yt-dlp/yt-dlp/commit/ceab4d5ed63a1f135a1816fe967c9d9a1ec7e6e8) ([#12884](https://github.com/yt-dlp/yt-dlp/issues/12884)) by [doe1080](https://github.com/doe1080)

@@ -159,8 +159,6 @@ class ExternalFD(FragmentFD):
             _, stderr, returncode = self._call_process(cmd, info_dict)
             if not returncode:
                 break
-            # TODO: Decide whether to retry based on error code
-            # https://aria2.github.io/manual/en/html/aria2c.html#exit-status
             if stderr:
                 self.to_stderr(stderr)
             retry.error = Exception()
