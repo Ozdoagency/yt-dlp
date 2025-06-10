@@ -458,7 +458,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     specify a field to match if the field is
                                     present, use "!field" to check if the field
                                     is not present, and "&" to check multiple
-                                    conditions. Use a "\" to escape "&" or
+                                   
                                     quotes if needed. If used multiple times,
                                     the filter matches if at least one of the
                                     conditions is met. E.g. --match-filters
@@ -576,12 +576,12 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
                                     use (optionally) prefixed by the protocols
                                     (http, ftp, m3u8, dash, rstp, rtmp, mms) to
                                     use it for. Currently supports native,
-                                    aria2c, avconv, axel, curl, ffmpeg, httpie,
+                                    , avconv, axel, curl, ffmpeg, httpie,
                                     wget. You can use this option multiple times
                                     to set different downloaders for different
-                                    protocols. E.g. --downloader aria2c
+                                    protocols. E.g. --downloader 
                                     --downloader "dash,m3u8:native" will use
-                                    aria2c for http/ftp downloads, and the
+                                     for http/ftp downloads, and the
                                     native downloader for dash/m3u8 downloads
                                     (Alias: --external-downloader)
     --downloader-args NAME:ARGS     Give these arguments to the external

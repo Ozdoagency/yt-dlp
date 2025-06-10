@@ -1117,17 +1117,17 @@ def create_parser():
         }, help=(
             'Name or path of the external downloader to use (optionally) prefixed by '
             'the protocols (http, ftp, m3u8, dash, rstp, rtmp, mms) to use it for. '
-            f'Currently supports native, {", ".join(sorted(list_external_downloaders()))}. '
+            'Currently supports native, axel, curl, ffmpeg, httpie, wget. '
             'You can use this option multiple times to set different downloaders for different protocols. '
-            'E.g. --downloader aria2c --downloader "dash,m3u8:native" will use '
-            'aria2c for http/ftp downloads, and the native downloader for dash/m3u8 downloads '
+            'E.g. --downloader wget --downloader "dash,m3u8:native" will use '
+            'wget for http/ftp downloads, и native downloader для dash/m3u8 '
             '(Alias: --external-downloader)'))
     downloader.add_option(
         '--downloader-args', '--external-downloader-args',
         metavar='NAME:ARGS', dest='external_downloader_args', default={}, type='str',
         action='callback', callback=_dict_from_options_callback,
         callback_kwargs={
-            'allowed_keys': r'ffmpeg_[io]\d*|{}'.format('|'.join(map(re.escape, list_external_downloaders()))),
+            'allowed_keys': r'ffmpeg_[io]\d*|axel|curl|ffmpeg|httpie|wget',
             'default_key': 'default',
             'process': shlex.split,
         }, help=(

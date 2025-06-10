@@ -11,7 +11,6 @@ import http.cookiejar
 
 from test.helper import FakeYDL
 from yt_dlp.downloader.external import (
-    Aria2cFD,
     AxelFD,
     CurlFD,
     FFmpegFD,
@@ -90,19 +89,6 @@ class TestCurlFD(unittest.TestCase):
             ydl.cookiejar.set_cookie(http.cookiejar.Cookie(**TEST_COOKIE))
             self.assertIn('--cookie', downloader._make_cmd('test', TEST_INFO))
             self.assertIn('test=ytdlp', downloader._make_cmd('test', TEST_INFO))
-
-
-class TestAria2cFD(unittest.TestCase):
-    def test_make_cmd(self):
-        with FakeYDL() as ydl:
-            downloader = Aria2cFD(ydl, {})
-            downloader._make_cmd('test', TEST_INFO)
-            self.assertFalse(hasattr(downloader, '_cookies_tempfile'))
-
-            # Test cookiejar tempfile arg is added
-            ydl.cookiejar.set_cookie(http.cookiejar.Cookie(**TEST_COOKIE))
-            cmd = downloader._make_cmd('test', TEST_INFO)
-            self.assertIn(f'--load-cookies={downloader._cookies_tempfile}', cmd)
 
 
 @unittest.skipUnless(FFmpegFD.available(), 'ffmpeg not found')
